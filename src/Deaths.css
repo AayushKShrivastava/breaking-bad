@@ -4,12 +4,13 @@
 
 
 .deaths-container {
+    box-sizing: border-box;
     margin-top: 100px;
-    padding: 10px 100px;
+    padding: 10px 300px;
 }
 
 .death-content {
-    margin: auto;
+    margin: 30px auto;
     max-width: 50vw;
     padding: 10px;
     text-align: center;
