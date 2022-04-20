@@ -9,16 +9,19 @@ function CharacterInfo() {
     const [quotes, setQuotes] = useState([])
     const [deaths, setDeaths] = useState([])
     useEffect(() => {
-        fetch(`https://www.breakingbadapi.com/api/quotes/${location.state.id}`)
+        fetch(`https://www.breakingbadapi.com/api/quotes`)
             .then(res => res.json())
-            .then(data => setQuotes(data))
+            .then(data => {
+                setQuotes(data.filter(quote => quote.author === location.state.name))
+            })
+        
 
         fetch(`https://www.breakingbadapi.com/api/deaths`)
             .then(res => res.json())
-            .then(data => setDeaths(data))
-    }, [location.state.id])
-
-    let count = 0;
+            .then(data => {
+                setDeaths(data.filter(death => death.responsible === location.state.name))
+            })
+    }, [location.state.name])
   return (
     <div className='characterInfo'>
         <div className='navbar'>
@@ -31,7 +34,7 @@ function CharacterInfo() {
                 <p>
                     <strong>{location.state.name}</strong>, also known as <strong>{location.state.nickName}</strong> is a {location.state.occupation[0]}. {location.state.nickName} appeared in the season {location.state.seasons.map(season => <>{season}, </> )} of the <strong>{location.state.series}</strong> series. The character has been played by <strong>{location.state.actor}</strong>.
                 </p>
-                <div className='quotes'>
+                {quotes.length && <div className='quotes'>
                     <h2>Famous Dialogue</h2>
                     {quotes.map(quote => (
                         <div key={quote.quote_id}>
@@ -39,22 +42,13 @@ function CharacterInfo() {
                             <hr />
                         </div>
                     ))}   
-                </div>
-                <div className='death'>
+                </div>}
+                {deaths.length && <div className='death'>
                     <h2>People Killed by {location.state.nickName}</h2>
                     <ul>
-                        {deaths.map(death => {
-                            if(death.responsible === location.state.name){
-                                count++;
-                                return(
-                                    <li key={death.death_id}>{death.death}</li>
-                                )
-                            }
-                        })}  
+                        {deaths.map(death => <li key={death.death_id}>{death.death}</li>)}  
                     </ul>
-                    {!count && "None"}
-                     {}
-                </div>
+                </div>}
             </div>
         </div>
         

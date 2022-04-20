@@ -13,7 +13,7 @@
 .container {
     margin-top: 130px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
 }
 
 .container > img {
@@ -28,12 +28,16 @@
                 0 32px 64px rgba(236, 230, 230, 0.07);
     border-radius: 5px;
     border: 2px solid green;
+    position: fixed;
+    left: 10%;
 }
 
 .info {
     max-width: 30vw;
     padding: 20px;
     align-self: center;
+    margin-top: 10px;
+    margin-right: 20%;
 }
 
 .quotes {
@@ -49,5 +53,5 @@ hr {
 }
 
 .death {
-    color: rgb(221, 126, 91);
+    color: rgb(109, 212, 25);
 }
