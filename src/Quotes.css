@@ -1,0 +1,36 @@
+.quotes {
+    color: white;
+}
+
+.quotes-container {
+    margin-top: 100px;
+    padding: 10px 100px;
+}
+
+.quote {
+    margin: auto;
+    padding: 10px;
+    max-width: 50vw;
+}
+
+.quote:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.quote > h3 {
+    margin: 10px 0;
+    text-align: center;
+    color: white;
+    font-style: italic;
+}
+
+hr {
+    margin-bottom: 10px;
+    border-top: 0px solid rgb(87, 119, 87);
+}
+
+.quote > h4 {
+    text-align: right;
+    color: lightgreen;
+}

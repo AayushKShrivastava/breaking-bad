@@ -1,0 +1,36 @@
+.navbar {
+    top: 0;
+    height: 80px;
+    background-color: green;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 0 10px;
+    position: fixed;
+    overflow-x: hidden;
+    z-index: 10;
+}
+
+.navbar > a > img {
+    width: 55px;
+    height: 55px;
+}
+
+.navbar > a > img:hover {
+    transform: scale(0.98);
+}
+
+.options {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}

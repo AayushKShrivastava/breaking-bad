@@ -1,0 +1,29 @@
+.characters {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px;
+    align-items: center;
+    padding: 20px;
+    color: yellowgreen;
+    
+}
+
+.characters > h2 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+p {
+    color: rgb(238, 243, 227);
+}
+
+.carousel {
+    padding: 20px;
+}
+p > strong {
+    color: rgb(255, 255, 255);
+}
