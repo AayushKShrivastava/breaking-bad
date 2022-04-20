@@ -1,7 +1,5 @@
-import React, { useEffect, useState} from 'react'
+import React from 'react'
 import "./Home.css"
-import Logo from "./assets/banner1.png"
-import Navbar from './Navbar'
 import banners from "./banners"
 import Carousel from "react-elastic-carousel"
 import { nanoid } from 'nanoid'

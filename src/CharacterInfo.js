@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom'
 import "./CharacterInfo.css"
 import Logo from "./assets/logo.jpg"
 import { Link } from 'react-router-dom'
-import {nanoid} from 'nanoid'
 
 function CharacterInfo() {
     const location = useLocation()
@@ -17,7 +16,7 @@ function CharacterInfo() {
         fetch(`https://www.breakingbadapi.com/api/deaths`)
             .then(res => res.json())
             .then(data => setDeaths(data))
-    }, [])
+    }, [location.state.id])
 
     let count = 0;
   return (
